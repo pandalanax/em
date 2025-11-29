@@ -100,3 +100,8 @@
 (add-to-list 'aggressive-indent-excluded-modes 'html-mode)
 
 
+
+(setq calendar-week-start-day 1)
+;; European date format
+(setq european-calendar-style t)
+
