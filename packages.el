@@ -47,10 +47,7 @@
 ;; (unpin! pinned-package another-pinned-package)
 ;; ...Or *all* packages (NOT RECOMMENDED; will likely break things)
 ;; (unpin! t)
-(package! everforest
-  :recipe (:host github
-           :repo "Theory-of-Everything/everforest-emacs"))
-
-(package! daemons)
-
-(package! aggressive-indent)
+(package! daemons) ;; manage systemd services
+(package! aggressive-indent) ;; intend
+(package! journalctl 
+  :recipe (:host github :repo "WJCFerguson/journalctl" :files ("journalctl.el"))) ;; see systemd logs in a buffer
