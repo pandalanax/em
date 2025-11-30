@@ -104,4 +104,4 @@
 (setq calendar-week-start-day 1)
 ;; European date format
 (setq european-calendar-style t)
-
+(turn-on-pbcopy)

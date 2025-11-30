@@ -51,3 +51,5 @@
 (package! aggressive-indent) ;; intend
 (package! journalctl 
   :recipe (:host github :repo "WJCFerguson/journalctl" :files ("journalctl.el"))) ;; see systemd logs in a buffer
+(package! pbcopy)
+
