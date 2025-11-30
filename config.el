@@ -105,3 +105,45 @@
 ;; European date format
 (setq european-calendar-style t)
 (turn-on-pbcopy)
+
+(map! :leader
+      :prefix "p"
+      :desc "Open Dired"
+      "v" #'dired-jump)
+
+(use-package dired-preview)
+(setq dired-preview-delay 0.01)
+(setq dired-preview-max-size (expt 2 20))
+(setq dired-preview-ignored-extensions-regexp
+      (concat "\\."
+              "\\(gz\\|"
+              "zst\\|"
+              "tar\\|"
+              "xz\\|"
+              "rar\\|"
+              "zip\\|"
+              "iso\\|"
+              "epub"
+              "\\)"))
+
+;; Enable `dired-preview-mode' in a given Dired buffer or do it
+;; globally:
+(dired-preview-global-mode 1)
+
+(after! evil-collection
+  (map! :map dired-mode-map
+        :nm "<up>"   #'dired-previous-line
+        :nm "<down>" #'dired-next-line))
+
+(after! nerd-icons
+  ;; Use your MesloLGS Nerd Font (already supports icons)
+  (setq nerd-icons-font-family "MesloLGS Nerd Font")
+  
+  ;; Ensure Doom font matches (already set)
+  (setq doom-font (font-spec :family "MesloLGS Nerd Font" :size 16)))
+
+(use-package! nerd-icons-dired
+  :hook (dired-mode . nerd-icons-dired-mode)
+  :config
+  ;; Ensure icons show immediately
+  (setq nerd-icons-dired-mode t))

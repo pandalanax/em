@@ -53,3 +53,8 @@
   :recipe (:host github :repo "WJCFerguson/journalctl" :files ("journalctl.el"))) ;; see systemd logs in a buffer
 (package! pbcopy)
 
+(package! dired-preview)
+(package! nerd-icons
+  :recipe (:host github :repo "rainstormstudio/nerd-icons.el" :files (:defaults "data")))
+(package! nerd-icons-dired
+  :recipe (:host github :repo "rainstormstudio/nerd-icons-dired"))
